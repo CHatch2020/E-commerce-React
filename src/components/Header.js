@@ -4,7 +4,7 @@ import SearchBar from "./Search";
 import cart from "../icons/cart.png";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const navigate = useNavigate();
 
   const onProducts = (event) => {
@@ -27,14 +27,35 @@ const Header = () => {
           onMouseEnter={() => setIsOpen(true)}
           onMouseLeave={() => setIsOpen(false)}
         >
-          <button onClick={onProducts} className="focus:outline-none focus:shadow-outline">
+          <button
+            onClick={onProducts}
+            className="focus:outline-none focus:shadow-outline"
+          >
             Products
           </button>
           {isOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-10">
-              <p>Option 1</p>
-              <p>Option 2</p>
-              <p>Option 3</p>
+            <div className="absolute flex flex-row justify-between w-max bg-white rounded-lg shadow-lg z-10">
+              <div>
+                <h3 className="underline">Mens Clothing</h3>
+                <p>Collared Tee's</p>
+                <p>Sweatshirts</p>
+                <p>Pants</p>
+                <p>Shorts</p>
+              </div>
+              <div>
+                <h3 className="underline">Womens Clothing</h3>
+                <p>Shirts</p>
+                <p>Sweatshirts</p>
+                <p>Pants</p>
+                <p>Shorts</p>
+              </div>
+              <div>
+                <h3 className="underline">Suppliments</h3>
+                <p>Energizing Stimulants</p>
+                <p>Growth</p>
+                <p>Gut Health</p>
+                <p>Nutrients</p>
+              </div>
             </div>
           )}
         </div>
